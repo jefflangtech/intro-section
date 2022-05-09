@@ -7,47 +7,73 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700;800&display=swap" rel="stylesheet">
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
 <body>
   <header>
-    <nav>
-      <div>
-        <img src="images/logo.svg" alt="" srcset="">
+    <div id="overlay"></div>
+    <div class="nav-container">
+      <div class="logo-container">
+        <img class="logo" src="images/logo.svg" alt="" srcset="">
+        <img id="menu-open" class="menu-ctrl" src="images/icon-menu.svg" alt="" srcset="">
+        <img id="menu-close" class="menu-ctrl removed" src="images/icon-close-menu.svg" alt="" srcset="">
       </div>
-      <div class="flex-nav">
-        <ul class="menu">
-          <li>Features</li>
-          <li>Company</li>
-          <li>Careers</li>
-          <li>About</li>
+      <nav id="nav-menu">
+        <ul class="main-nav">
+          <li><div class="accordion-ctrl">Features
+            <img class="accordion-ctrl-icon" src="images/icon-arrow-down.svg" alt="" srcset="">
+            </div>
+            <div class="accordion-content">
+              <ul class="sub-nav">
+                <li><a href="#" class="sub-links"><img src="images/icon-todo.svg" alt="" srcset="">Todo List</a></li>
+                <li><a href="#" class="sub-links"><img src="images/icon-calendar.svg" alt="" srcset="">Calendar</a></li>
+                <li><a href="#" class="sub-links"><img src="images/icon-reminders.svg" alt="" srcset="">Reminders</a></li>
+                <li><a href="#" class="sub-links"><img src="images/icon-planning.svg" alt="" srcset="">Planning</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><div class="accordion-ctrl">Company
+            <img class="accordion-ctrl-icon" src="images/icon-arrow-down.svg" alt="" srcset="">
+            </div>
+            <div class="accordion-content">
+              <ul class="sub-nav">
+                <li><a href="#" class="sub-links">History</a></li>
+                <li><a href="#" class="sub-links">Our Team</a></li>
+                <li><a href="#" class="sub-links">Blog</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
         </ul>
-        <div>
-          <button class="nav-user-ctrl">Login</button>
-          <button class="nav-user-ctrl">Register</button>
-        </div>
-      </div>
-    </nav>
+        <div class="user-btn-container">
+          <a href="#" class="user-btn">Login</a>
+          <a href="#" class="user-btn register">Register</a>
+        </div> 
+      </nav>
+    </div>
   </header>
   <main>
     <div class="hero">
       <img src="images/image-hero-mobile.png" alt="" srcset="">
     </div>
-    <section>
+    <section class="cta">
       <h1>Make remote work</h1>
       <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-      <button>Learn more</button>
-      <div>
-        <div><img src="images/client-databiz.svg" alt="" srcset=""></div>
-        <div><img src="images/client-audiophile.svg" alt="" srcset=""></div>
-        <div><img src="images/client-meet.svg" alt="" srcset=""></div>
-        <div><img src="images/client-maker.svg" alt="" srcset=""></div>
+      <a href="#" class="btn-cta">Learn more</a>
+      <div class="examples-container">
+        <div class="customer-examples"><img src="images/client-databiz.svg" alt="" srcset=""></div>
+        <div class="customer-examples"><img src="images/client-audiophile.svg" alt="" srcset=""></div>
+        <div class="customer-examples"><img src="images/client-meet.svg" alt="" srcset=""></div>
+        <div class="customer-examples"><img src="images/client-maker.svg" alt="" srcset=""></div>
       </div>
     </section>
   </main>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br>
     Coded by <a href="https://jefflangtech.github.io/">JeffLangTech</a>.
   </div>
+  <script src="js/index.js"></script>
+</body>
 </html>

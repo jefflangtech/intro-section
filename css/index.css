@@ -15,47 +15,234 @@ font-family: 'Epilogue', sans-serif;
 
 * {
     box-sizing: border-box;
+    font-size: 18px;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Epilogue', sans-serif;
+    color: hsl(0, 0%, 8%);
+    overflow:hidden;
 }
 
-.flex-nav {
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.93rem;
+}
+
+header {
+    position: relative;
+}
+
+#overlay {
+    position: absolute;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(0, 0%, 0%, 0.5);
+    z-index: 50;
+    cursor: pointer;
+}
+
+.nav-container {
+    position: relative;
+}
+
+.logo-container {
     display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    border:1px solid red;
-    margin: 5px;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
-.menu {
-    list-style: none;
+.logo {
+    margin-top: 1.35em;
+    margin-left: 1.15em;
+}
+
+#menu-open {
+    width: 32px;
+    height: 18px;
+}
+
+#menu-close:hover, #menu-open:hover {
+    cursor: pointer;
+}
+
+.menu-ctrl {
+    margin-top: 1.35em;
+    margin-right: 1.15em;
+    z-index: 99999;
+}
+
+nav {
+    position: absolute;
+    z-index: 100;
+    padding: 20px;
+    height: 100vh;
+    width: 65vw;
+    right: 0;
+    top: 0;
+    color: hsl(0, 0%, 41%);
+    background-color: white;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.main-nav {
     display: flex;
     flex-direction: column;
     padding: 0;
+    padding-top: 4em;
     margin: 0;
+    margin-bottom: 2em;
 }
 
-.nav-user-ctrl {
-    display: block;
+li {
+    list-style: none;
+    margin-bottom: 1em;
+    font-size: 0.93em;
 }
 
+.accordion-ctrl {
+    font-size: 0.93rem;
+}
+
+.accordion-ctrl:hover {
+    cursor: pointer;
+}
+
+.accordion-ctrl-icon {
+    margin-left: 0.35rem;
+    margin-bottom: 0.1rem;
+    transform: rotate(0turn);
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-content {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out, opacity 0.5s;
+}
+
+.sub-nav {
+    padding-left: 2em;
+    padding-top: 1.25em;
+}
+
+.sub-links {
+    display: flex;
+    align-items: center;
+}
+
+.sub-links > img {
+    max-height: 1.75em;
+    margin-bottom: 0.25em;
+    padding-right: 1em;
+}
+
+.user-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-btn {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8em;
+}
+
+.register {
+    border: 2px solid hsl(0, 0%, 41%);
+    padding-top: 0.85em;
+    padding-bottom: 0.85em;
+    width: 95%;
+    border-radius: 1em;
+    text-align: center;
+}
 
 /* Main Section */
+main {
+    text-align: center;
+}
+
 .hero img {
     width: 100%;
+    margin-bottom: 2.75rem;
+}
+
+.cta > h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.cta > p {
+    color: hsl(0, 0%, 41%);
+    line-height: 1.65rem;
+    font-size: 0.92rem;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.92rem;
+    border: none;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.examples-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.customer-examples > img {
+    max-width: calc(100vw / 5);
+    max-height: 1.45rem;
+}
+
+.removed {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    #menu-open {
+        display: none;
+    }
 }
 
 /* Attribution styles for FrontEnd Mentor */
 .attribution { 
-    font-size: 11px; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: 'Epilogue', sans-serif;
+    margin-top: auto;
+    font-size: 0.75rem; 
     text-align: center; 
 }
 
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: hsl(228, 45%, 44%);
+    font-size: 0.85rem;
 }
