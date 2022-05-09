@@ -492,16 +492,23 @@ main {
     .main-nav li {
         padding-left: 1rem;
         padding-right: 0.5rem;
-        max-width: 150px;
+        max-width: 153px;
     }
     .last-nav-link {
         padding-left: 0.5em;
     }
+    .accordion-content {
+        left: 0rem;
+    }
+    .company-links {
+        left: 10.5rem;
+    }
+    .sub-nav {
+        padding-left: 0;
+        padding-right: 0.75rem;
+    }
     main {
         gap: 3rem;
-    }
-    .cta {
-        /* max-width: 432px; */
     }
     .h1-lead-word {
         font-size: 4rem;
@@ -522,6 +529,16 @@ main {
     }
     .last-nav-link {
         padding-left: 0.5em;
+    }
+    .accordion-content {
+        left: 0rem;
+    }
+    .company-links {
+        left: 10.5rem;
+    }
+    .sub-nav {
+        padding-left: 0;
+        padding-right: 0.75rem;
     }
     main {
         gap: 3rem;
