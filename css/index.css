@@ -309,7 +309,7 @@ main {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
     }
     #nav-menu {
         position: static;
@@ -351,7 +351,7 @@ main {
         position: absolute;
         z-index: 50;
         top: 3.5rem;
-        left: -3rem;
+        left: -1rem;
         max-height: unset;
         background-color: white;
         border-radius: 1rem;
@@ -361,13 +361,13 @@ main {
         left: 8rem;
     }
     .sub-nav {
-        padding-left: 2rem;
-        padding-top: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-right: 1.25rem;
+        padding-bottom: 0.5rem;
     }
     .sub-links {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
     .user-btn-container {
         position: static;
@@ -391,7 +391,7 @@ main {
         flex-direction: row-reverse;
         justify-content: center;
         align-items: flex-end;
-        gap: 3em;
+        gap: 1rem;
     }
     .hero-mobile {
         display: none;
@@ -439,9 +439,9 @@ main {
 }
 
 @media (min-width: 851px) and (max-width: 1000px) {
-    /* .cta {
-        min-width: 30vw;
-    } */
+    main {
+        gap: 1rem;
+    }
     .h1-lead-word {
         font-size: 3rem;
     }
@@ -463,7 +463,10 @@ main {
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1250px) {
+@media (min-width: 1000px) and (max-width: 1200px) {
+    main {
+        gap: 3rem;
+    }
     .cta {
         min-width: 40vw;
     }
@@ -485,7 +488,18 @@ main {
     }
 }
 
-@media (min-width: 1250px) and (max-width: 1440px) {
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .main-nav li {
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+        max-width: 150px;
+    }
+    .last-nav-link {
+        padding-left: 0.5em;
+    }
+    main {
+        gap: 3rem;
+    }
     .cta {
         /* max-width: 432px; */
     }
@@ -495,23 +509,34 @@ main {
     .cta h1 {
         font-size: 3.5rem;
     }
-    .hero img {
+    .hero-desktop img {
         max-width: 432px;
     }
 }
 
 @media (min-width: 1440px) {
+    .main-nav li {
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+        max-width: 150px;
+    }
+    .last-nav-link {
+        padding-left: 0.5em;
+    }
+    main {
+        gap: 3rem;
+    }
     .cta {
         max-width: 432px;
     }
     .h1-lead-word {
-        font-size: 5rem;
+        font-size: 90px;
     }
     .cta h1 {
-        font-size: 4.5rem;
+        font-size: 81px;
     }
-    .hero img {
-        max-width: 432px;
+    .hero-desktop img {
+        max-width: 460px;
     }
 }
 
