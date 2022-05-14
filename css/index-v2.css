@@ -91,6 +91,7 @@ a {
 .menu-arrow {
     padding-block: 3px;
     padding-inline: 6px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .accordion-content {
@@ -144,6 +145,8 @@ a:hover {
 main {
     display: flex;
     flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-evenly;
 }
 
 .cta-content {
@@ -151,6 +154,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 0.6rem;
+    margin-bottom: 2rem;
 }
 
 h1 {
@@ -165,11 +169,13 @@ h1 {
     line-height: 1.45rem;
     font-size: 0.93rem;
     text-align: center;
+    max-width: 625px;
 }
 
 .cta {
     text-align: center;
     margin-block: 1.2rem;
+    padding-inline: 0.6rem;
 }
 
 .cta-button {
@@ -190,11 +196,12 @@ h1 {
 }
 
 .examples-container {
-    margin-block: 2rem;
+    padding-block: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    max-width: 625px;
     padding-inline: 0.6rem;
     gap: 1rem;
 }
@@ -238,7 +245,6 @@ footer {
     border-bottom:1px solid hsl(0, 0%, 41%);
 }
 
-
 @media (max-width: 860px) {
     .nav-container {
         justify-content: space-between;
@@ -251,7 +257,7 @@ footer {
         top: 0px;
         right: 0px;
         padding-top: 10vh;
-        padding-left: 1rem;
+        padding-left: 1.45rem;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -266,20 +272,26 @@ footer {
         align-items: flex-start;
         margin: 0;
         padding: 0;
-        gap: 1rem;
+        gap: 1.6rem;
     }
     .flex-nav-links li:last-child {
         margin-left: 0rem;
     }
     .user-links {
+        font-size: 0.9rem;
         padding-top: 3rem;
         margin-right: 0;
         align-items: center;
         width: 100%;
         padding-right: 1rem;
     }
+    .user-buttons {
+        padding-bottom: 0.75rem;
+    }
     .register {
-        padding-inline: 3rem;
+        padding-block: 0.75rem;
+        padding-inline: 3.8rem;
+        border-radius: 1rem;
     }
     .menu-ctrl {
         display: block;
@@ -287,9 +299,12 @@ footer {
     }
     main {
         flex-direction: column;
+        align-items: center;
     }
     .hero {
         width: 100vw;
+        max-width: 625px;
+        text-align: center;
     }
     .img-mobile {
         width: 100%;
@@ -300,6 +315,9 @@ footer {
 }
 
 @media (min-width: 860px) {
+    .nav-container {
+        margin-bottom: 2.5rem;
+    }
     .accordion-content {
         position: absolute;
         z-index: 50;
@@ -321,6 +339,49 @@ footer {
         margin-left: 0;
         margin-bottom: 0;
     }
+    .img-mobile {
+        display: none;
+    }
+    .img-desktop {
+        width: 480px;
+        max-width: 50vw;
+        padding-right: 1.2rem;
+    }
+    .cta-container {
+        width: 680px;
+        max-width: 50vw;
+    }
+    .cta-content {
+        align-items: flex-start;
+        padding-left: 1.2rem;
+    }
+    .cta-content > h1 {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+    .cta-content > p {
+        text-align: left;
+        max-width: 400px;
+    }
+    .cta {
+        text-align: left;
+        padding-left: 1.2rem;
+        padding-bottom: 2rem;
+    }
+    #lead-word {
+        display: block;
+        font-size: 3.5rem;
+    }
+    .examples-container {
+        width: 460px;
+        max-width: 50vw;
+        padding-left: 1.2rem;
+        padding-right: 2.4rem;
+        padding-bottom: 0;
+    }
+    .customer-examples {
+        max-width: 100px;
+    }
 }
 
 @media (min-width: 860px) and (max-width: 950px) {
@@ -335,6 +396,58 @@ footer {
     }
     .company-links {
         left: 15.5rem;
+    }
+    .img-desktop {
+        max-width: 45vw;
+    }
+}
+
+@media (min-width: 950px) {
+    .cta-content {
+        margin-bottom: 3.5rem;
+    }
+    .cta-content h1 {
+        font-size: 3.5rem;
+    }
+    #lead-word {
+        font-size: 4rem;
+    }
+    .cta {
+        padding-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    main {
+        justify-content: center;
+    }
+    .cta-container {
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .nav-container {
+        margin-bottom: 3rem;
+    }
+    .cta-container {
+        max-width: 660px;
+    }
+    .cta-content {
+        margin-bottom: 4.5rem;
+    }
+    .cta-content h1 {
+        font-size: 4rem;
+        padding-bottom: 1rem;
+    }
+    #lead-word {
+        font-size: 4.5rem;
+    }
+    .cta {
+        padding-bottom: 4rem;
+    }
+    .img-desktop {
+        width: 520px;
     }
 }
 
