@@ -35,6 +35,10 @@ const closeMenuContents = function() {
 }
 
 menuOpen.addEventListener('click', () => {
+    // console.log(window.innerHeight)
+    // console.dir(nav)
+    // console.log(document.body.clientHeight)
+    nav.style.minHeight = document.body.clientHeight + "px"
     menuOpen.classList.toggle('removed')
     menuClose.classList.toggle('removed')
     nav.style.transform = "translateX(0%)"
@@ -42,6 +46,7 @@ menuOpen.addEventListener('click', () => {
 })
 
 menuClose.addEventListener('click', () => {
+    nav.style.minHeight = null
     menuOpen.classList.toggle('removed')
     menuClose.classList.toggle('removed')
     nav.style.transform = null
