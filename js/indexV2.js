@@ -4,18 +4,25 @@ const nav = document.querySelector('#nav-menu')
 const accordionControl = document.querySelectorAll('.accordion-ctrl')
 const overlay = document.querySelector('#overlay')
 
-// nav.addEventListener('mouseover', () => {
-//     console.log('Hit the nav')
+// nav.addEventListener('mouseleave', () => {
+//     let timeoutID = setTimeout(() => {
+//         closeMenuContents()
+//     }, '100')
+//     nav.addEventListener('mouseover', () => {
+//         clearTimeout(timeoutID)
+//     })
 // })
 
-nav.addEventListener('mouseleave', () => {
-    let timeoutID = setTimeout(() => {
-        closeMenuContents()
-    }, '100')
-    nav.addEventListener('mouseover', () => {
-        clearTimeout(timeoutID)
+const onMouseLeaveClose = function(navElement) {
+    navElement.addEventListener('mouseleave', () => {
+        let timeoutID = setTimeout(() => {
+            closeMenuContents()
+        }, '100')
+        navElement.addEventListener('mouseover', () => {
+            clearTimeout(timeoutID)
+        })
     })
-})
+}
 
 const closeMenuContents = function() {
     const menuContents = document.querySelectorAll('.accordion-content')
@@ -35,9 +42,6 @@ const closeMenuContents = function() {
 }
 
 menuOpen.addEventListener('click', () => {
-    // console.log(window.innerHeight)
-    // console.dir(nav)
-    // console.log(document.body.clientHeight)
     nav.style.minHeight = document.body.clientHeight + "px"
     menuOpen.classList.toggle('removed')
     menuClose.classList.toggle('removed')
@@ -80,16 +84,14 @@ accordionControl.forEach(control => {
             content.style.opacity = 1
             content.style.zIndex = 50
             menuArrow.style.transform = 'rotate(-0.5turn)'
-            console.dir(content)
-            // The code below loops through the accordion elements
-            // and closes any opened ones when the next one is clicked
+            // Close the menu after mouse-leaving it
+            onMouseLeaveClose(control.parentElement)
+            // Close any open accordion menus when another one is opened
             accordionControl.forEach(controlElement => {
                 if(controlElement !== control && controlElement.nextElementSibling.style.maxHeight) {
                     controlElement.nextElementSibling.style.maxHeight = null
                     controlElement.nextElementSibling.style.opacity = null
                     controlElement.nextElementSibling.style.zIndex = null
-                } else {
-                    console.log(`This is the one`)
                 }
             })
         }

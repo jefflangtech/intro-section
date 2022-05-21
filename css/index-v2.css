@@ -274,7 +274,7 @@ footer {
         justify-content: flex-start;
         align-items: flex-start;
         min-height: 100vh;
-        width: 65vw;
+        width: 70vw;
         max-width: 250px;
         transform: translateX(100%);
         transition: transform 0.2s ease-in-out;
@@ -295,7 +295,7 @@ footer {
         margin-right: 0;
         align-items: center;
         width: 100%;
-        padding-right: 1rem;
+        padding-right: 2rem;
     }
     .user-buttons {
         padding-bottom: 0.75rem;
