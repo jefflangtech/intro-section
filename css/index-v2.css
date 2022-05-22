@@ -26,6 +26,11 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    overflow: hidden;
+}
+
+#body-wrapper {
+    width: 100%;
     overflow-x: hidden;
 }
 
