@@ -1,6 +1,6 @@
-# Frontend Mentor - Intro section with dropdown navigation solution
+# Jeff Lang - May 2022 Projects - Intro section with dropdown navigator by Frontend Mentor
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). 
 
 ## Table of contents
 
@@ -16,34 +16,26 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+This is the first web-dev project undertaken for my portfolio after re-aquainting myself with the basics of modern dev, taking a number of online classes and completing an online bootcamp. This portfolio piece demonstrates the use of HTML, CSS, and JS to create a standard landing page that utilizes drop down menus, a sliding drawer nav in mobile mode, and media queries to provide responsiveness.
 
 ### The challenge
 
-Users should be able to:
+Users can:
 
-- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
-- View the optimal layout for the content depending on their device's screen size
-- See hover states for all interactive elements on the page
+- View relevant dropdown menus on desktop and mobile
+- Dropdown menus behave differently on mobile and desktop providing a tailored UX depending on device used.
+- View optimal layout for a variety of device screen sizes, from 375px to 1440px+ wide.
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Design preview for the Intro section with dropdown navigation coding challenge](./images/desktop_preview.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Github Repo: [Github](https://github.com/jefflangtech/intro-section)
+- Live Site URL: [Live site](https://jefflangtech.github.io/intro-section/index-v2.html)
 
 ## My process
 
