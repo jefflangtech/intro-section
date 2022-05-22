@@ -458,6 +458,13 @@ footer {
     }
 }
 
+@media (orientation: landscape) {
+    #body-wrapper {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+}
+
 .removed {
     display: none;
 }
