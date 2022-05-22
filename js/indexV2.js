@@ -4,15 +4,8 @@ const nav = document.querySelector('#nav-menu')
 const accordionControl = document.querySelectorAll('.accordion-ctrl')
 const overlay = document.querySelector('#overlay')
 
-// nav.addEventListener('mouseleave', () => {
-//     let timeoutID = setTimeout(() => {
-//         closeMenuContents()
-//     }, '100')
-//     nav.addEventListener('mouseover', () => {
-//         clearTimeout(timeoutID)
-//     })
-// })
 
+// Helper functions for nav menu functionality
 const onMouseLeaveClose = function(navElement) {
     navElement.addEventListener('mouseleave', () => {
         let timeoutID = setTimeout(() => {
@@ -22,6 +15,14 @@ const onMouseLeaveClose = function(navElement) {
             clearTimeout(timeoutID)
         })
     })
+}
+
+const closeMenu = function() {
+    nav.style.minHeight = null
+    menuOpen.classList.toggle('removed')
+    menuClose.classList.toggle('removed')
+    nav.style.transform = null
+    overlay.style.display = null
 }
 
 const closeMenuContents = function() {
@@ -41,6 +42,8 @@ const closeMenuContents = function() {
     })
 }
 
+
+// Event Listeners
 menuOpen.addEventListener('click', () => {
     nav.style.minHeight = document.body.clientHeight + "px"
     menuOpen.classList.toggle('removed')
@@ -50,21 +53,16 @@ menuOpen.addEventListener('click', () => {
 })
 
 menuClose.addEventListener('click', () => {
-    nav.style.minHeight = null
-    menuOpen.classList.toggle('removed')
-    menuClose.classList.toggle('removed')
-    nav.style.transform = null
-    overlay.style.display = null
-})
-
-overlay.addEventListener('click', () => {
-    menuOpen.classList.toggle('removed')
-    menuClose.classList.toggle('removed')
-    nav.style.transform = null
-    overlay.style.display = null
+    closeMenu()
     closeMenuContents()
 })
 
+overlay.addEventListener('click', () => {
+    closeMenu()
+    closeMenuContents()
+})
+
+// Sub-menu show and hide functionality
 accordionControl.forEach(control => {
     control.addEventListener('click', function() {
         let menuArrow = control.children[0]
@@ -73,20 +71,17 @@ accordionControl.forEach(control => {
             content.style.maxHeight = null
             content.style.opacity = null
             menuArrow.style.transform = null
-            // Tests to know which layout is current
-            if(nav.style[0]) {
-                console.log('Using the vertical nav')
-            } else {
-                console.log('Using the horizontal nav')
-            }
         } else {
             content.style.maxHeight = content.scrollHeight + "px"
             content.style.opacity = 1
             content.style.zIndex = 50
             menuArrow.style.transform = 'rotate(-0.5turn)'
-            // Close the menu after mouse-leaving it
-            onMouseLeaveClose(control.parentElement)
+            // Close the menu after mouse-leaving it, desktop only
+            if(!nav.style[0]) {
+                onMouseLeaveClose(control.parentElement)
+            }
             // Close any open accordion menus when another one is opened
+            // Could also make this desktop only?
             accordionControl.forEach(controlElement => {
                 if(controlElement !== control && controlElement.nextElementSibling.style.maxHeight) {
                     controlElement.nextElementSibling.style.maxHeight = null
