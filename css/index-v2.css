@@ -103,7 +103,7 @@ a {
 .accordion-content {
     max-height: 0px;
     opacity: 0;
-    /* overflow: hidden; */
+    overflow: hidden;
     transition: max-height 0.2s ease-in-out, opacity 0.5s;
 }
 
@@ -333,6 +333,7 @@ footer {
         max-height: unset;
         background-color: white;
         border-radius: 0.5rem;
+        overflow: visible;
         filter: drop-shadow(0 0 0.5rem hsla(0, 0%, 8%, 0.3));
     }
     .company-links {
