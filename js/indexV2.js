@@ -9,7 +9,7 @@ const overlay = document.querySelector('#overlay')
 const onMouseLeaveClose = function(navElement) {
     navElement.addEventListener('mouseleave', () => {
         let timeoutID = setTimeout(() => {
-            closeMenuContents()
+            closeNavContents()
         }, '100')
         navElement.addEventListener('mouseover', () => {
             clearTimeout(timeoutID)
@@ -17,7 +17,15 @@ const onMouseLeaveClose = function(navElement) {
     })
 }
 
-const closeMenu = function() {
+const openNav = function() {
+    nav.style.minHeight = document.body.clientHeight + "px"
+    menuOpen.classList.toggle('removed')
+    menuClose.classList.toggle('removed')
+    nav.style.transform = "translateX(0%)"
+    overlay.style.display = "block"
+}
+
+const closeNav = function() {
     nav.style.minHeight = null
     menuOpen.classList.toggle('removed')
     menuClose.classList.toggle('removed')
@@ -25,62 +33,54 @@ const closeMenu = function() {
     overlay.style.display = null
 }
 
-const closeMenuContents = function() {
-    const menuContents = document.querySelectorAll('.accordion-content')
-    const menuArrows = document.querySelectorAll('.menu-arrow')
-    menuContents.forEach(content => {
-        if(content.style.maxHeight) {
-            content.style.maxHeight = null
-            content.style.opacity = null
-            content.style.zIndex = null
-        }
-    })
-    menuArrows.forEach(arrow => {
-        if(arrow.style.transform) {
-            arrow.style.transform = null
-        }
-    })
-}
-
-const closeAccordionContent = function(controlDiv) {
-    let menuArrow = control.children[0]
-    let content = this.nextElementSibling
-    if(content.style.maxHeight) {
-        content.style.maxHeight = null
-        content.style.opacity = null
+const closeNavContents = function(singleControl) {
+    if(singleControl) {
+        const menuContent = singleControl.nextElementSibling
+        const menuArrow = singleControl.children[0]
+        menuContent.style.maxHeight = null
+        menuContent.style.opacity = null
+        menuContent.style.zIndex = null
         menuArrow.style.transform = null
+    } else {
+        const menuContents = document.querySelectorAll('.accordion-content')
+        const menuArrows = document.querySelectorAll('.menu-arrow')
+        menuContents.forEach(content => {
+            if(content.style.maxHeight) {
+                content.style.maxHeight = null
+                content.style.opacity = null
+                content.style.zIndex = null
+            }
+        })
+        menuArrows.forEach(arrow => {
+            if(arrow.style.transform) {
+                arrow.style.transform = null
+            }
+        })
     }
 }
 
-
 // Event Listeners
 menuOpen.addEventListener('click', () => {
-    nav.style.minHeight = document.body.clientHeight + "px"
-    menuOpen.classList.toggle('removed')
-    menuClose.classList.toggle('removed')
-    nav.style.transform = "translateX(0%)"
-    overlay.style.display = "block"
+    openNav()
 })
 
 menuClose.addEventListener('click', () => {
-    closeMenu()
-    closeMenuContents()
+    closeNav()
+    closeNavContents()
 })
 
 overlay.addEventListener('click', () => {
-    closeMenu()
-    closeMenuContents()
+    closeNav()
+    closeNavContents()
 })
 
 // Sub-menu show and hide functionality
 accordionControl.forEach(control => {
     control.addEventListener('click', function() {
-        let menuArrow = control.children[0]
+        let menuArrow = this.children[0]
         let content = this.nextElementSibling
         if(content.style.maxHeight) {
-            content.style.maxHeight = null
-            content.style.opacity = null
-            menuArrow.style.transform = null
+            closeNavContents(control)
         } else {
             content.style.maxHeight = content.scrollHeight + "px"
             content.style.opacity = 1
@@ -91,7 +91,6 @@ accordionControl.forEach(control => {
                 onMouseLeaveClose(control.parentElement)
             }
             // Close any open accordion menus when another one is opened
-            // Could also make this desktop only?
             accordionControl.forEach(controlElement => {
                 if(controlElement !== control && controlElement.nextElementSibling.style.maxHeight) {
                     controlElement.nextElementSibling.style.maxHeight = null
