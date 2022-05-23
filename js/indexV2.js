@@ -42,6 +42,16 @@ const closeMenuContents = function() {
     })
 }
 
+const closeAccordionContent = function(controlDiv) {
+    let menuArrow = control.children[0]
+    let content = this.nextElementSibling
+    if(content.style.maxHeight) {
+        content.style.maxHeight = null
+        content.style.opacity = null
+        menuArrow.style.transform = null
+    }
+}
+
 
 // Event Listeners
 menuOpen.addEventListener('click', () => {
@@ -87,6 +97,7 @@ accordionControl.forEach(control => {
                     controlElement.nextElementSibling.style.maxHeight = null
                     controlElement.nextElementSibling.style.opacity = null
                     controlElement.nextElementSibling.style.zIndex = null
+                    controlElement.children[0].style.transform = null
                 }
             })
         }
