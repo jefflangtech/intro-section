@@ -4,7 +4,6 @@ const nav = document.querySelector('#nav-menu')
 const accordionControl = document.querySelectorAll('.accordion-ctrl')
 const overlay = document.querySelector('#overlay')
 
-
 // Helper functions for nav menu functionality
 const onMouseLeaveClose = function(navElement) {
     navElement.addEventListener('mouseleave', () => {
@@ -87,7 +86,7 @@ accordionControl.forEach(control => {
             content.style.zIndex = 50
             menuArrow.style.transform = 'rotate(-0.5turn)'
             // Close the menu after mouse-leaving it, desktop only
-            if(!nav.style[0]) {
+            if(nav.scrollWidth > 560) {
                 onMouseLeaveClose(control.parentElement)
             }
             // Close any open accordion menus when another one is opened
