@@ -1,73 +1,86 @@
 # Jeff Lang - May 2022 Projects - Intro section with dropdown navigator by Frontend Mentor
 
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). 
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+This is the first web-dev project undertaken for my portfolio after re-aquainting myself with the basics of modern dev, taking a number of online classes and completing an online bootcamp. This portfolio piece demonstrates the use of HTML, CSS, and JS to create a standard landing page that utilizes drop down menus, a sliding drawer nav in mobile mode, and media queries to provide responsiveness.
+
+### The challenge
+
+Users can:
+
+- View relevant dropdown menus on desktop and mobile
+- Dropdown menus behave differently on mobile and desktop providing a tailored UX depending on device used.
+- View optimal layout for a variety of device screen sizes, from 375px to 1440px+ wide.
+
+### Screenshot
+
 ![Design preview for the Intro section with dropdown navigation coding challenge](./images/desktop_preview.jpg)
 
-## Welcome! 👋
+### Links
 
-This is the first web-dev project that I am working on after taking some (current) classes on modern web development including CSS3 and JS. I knew that working with the navs and media queries was going to provide me a good challenge to cut my teeth on. So far it's lived up to the expectation!
+- Github Repo: [Github](https://github.com/jefflangtech/intro-section)
+- Live Site URL: [Live site](https://jefflangtech.github.io/intro-section/index.html)
 
-## The challenge
+## My process
 
-Users should be able to:
+### Built with
 
-- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
-- View the optimal layout for the content depending on their device's screen size
-- See hover states for all interactive elements on the page
+- Semantic HTML5 markup
+- Flexbox
+- Mobile-first workflow (kinda-sorta)
+- Good ol' vanilla JS
 
-## IN PROGRESS BELOW - README TO FOLLOW COMPLETION OF PROJECT!
+### What I learned
 
-## Building your project
+I started with a mobile-first workflow, and actually created a v1 of this page [First version](https://jefflangtech.github.io/intro-section/index-v1.html), until manipulating the nav got a bit out of control. I rebooted everything and this time began with the HTML structure as it would be most natural, and then manipulated the structure with CSS and media queries to get the mobile features I needed. In the process I dropped 110 lines out of the CSS file.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+The HTML structure below illustrates what I'm talking about (simplified from the actual HTML file):
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```html
+        <div class="nav-container">
+            <div class="logo"></div>
+            <nav id="nav-menu" class="nav-flex-container"></nav>
+            <div class="menu-ctrl"></div>
+        </div>
+```
 
-## Deploying your project
+I structured this as a container with a logo, a nav element (which would change as the media type dictated), and a button which would appear or not as needed. Within each of these is one or multiple other elements, and many employing flexbox. In a large enough layout the natural structure is horizontal with each primary element inline. And then what I did was to pop the nav element out with absolute positioning when I needed the vertical layout. Still, the nav-container retained an inline and flex display, adding the control button in for the slideout nav, and it was only the nav element that needed to be moved about. The flex-direction and spacing of the nav-container was constant throughout. This taught me to determine, prior to writing any code, what was the most "natural" layout dictated by the design(s), and adjust from there as required by media type.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+## Additional learning headaches
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- Viewheight (vh) is to be used with caution, especially when considering iOS devices. 
+- Speaking of iOS devices, even if I am busting out my brand new iPhone, with the Chrome app installed, it's still using the blink rendering engine (Apple) so it's going to behave like Safari. Have fun with that! (I do love you Apple but whyyyy)
+- Safari don't care about overflow:hidden on the body element. I used an encapsulating div just inside the body tag.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### Continued development
 
-## Create a custom `README.md`
+- My iPhone layout in landscape is still broken. I will eventually create a layout for phones in landscape mode.
+- I have not yet battled "navigating bar intrudes into viewport space" but it seems to be a standard question on stack overflow. Safari on iOS and Chrome on iOS behave a bit differently too.
+- In V2 my media query setup was better but I think with time and practice I'll nail down a routine. I feel like this is the difference of many, many lines of code between a good and bad practice.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+### Useful resources
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- [Responsive navbar tutorial](https://youtu.be/HbBMp6yUXO0) - Kevin Powell did a tutorial for a different Frontend Mentor challenge that was very helpful in laying the groundwork for a responsive nav. Highly recommend.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## Author
 
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- LinkedIn - [Jeff Lang](https://www.linkedin.com/in/jeff-lang-a28b4288/)
+- Website - [Jeff Lang](https://jefflangtech.github.io/)
+- Frontend Mentor - [@jefflangtech](https://www.frontendmentor.io/profile/jefflangtech)
+- Twitter - [@jefflangtech](https://twitter.com/jefflangtech)
