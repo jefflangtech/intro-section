@@ -30,7 +30,7 @@ Users can:
 
 ### Screenshot
 
-![Design preview for the Intro section with dropdown navigation coding challenge](.../images/desktop_preview.jpg)
+![Design preview for the Intro section with dropdown navigation coding challenge](images/desktop_preview.png)
 
 ### Links
 
