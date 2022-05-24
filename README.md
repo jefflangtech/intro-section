@@ -20,6 +20,11 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 
 This is the first web-dev project undertaken for my portfolio after re-aquainting myself with the basics of modern dev, taking a number of online classes and completing an online bootcamp. This portfolio piece demonstrates the use of HTML, CSS, and JS to create a standard landing page that utilizes drop down menus, a sliding drawer nav in mobile mode, and media queries to provide responsiveness.
 
+### Time involved
+
+ - 12 hours on version 1 to be scrapped because the CSS became unwieldy
+ - 15 hours on version 2 for the better structured page after [What I Learned](#what-i-learned)
+
 ### The challenge
 
 Users can:
@@ -30,11 +35,7 @@ Users can:
 
 ### Screenshot
 
-<<<<<<< HEAD
 ![Design preview for the Intro section with dropdown navigation coding challenge](images/desktop_preview.jpg)
-=======
-![Design preview for the Intro section with dropdown navigation coding challenge](images/desktop_preview.png)
->>>>>>> 7f662b9b21ad8c376d9dfe3a447a144b6c4eca17
 
 ### Links
 
@@ -66,7 +67,7 @@ The HTML structure below illustrates what I'm talking about (simplified from the
 
 I structured this as a container with a logo, a nav element (which would change as the media type dictated), and a button which would appear or not as needed. Within each of these is one or multiple other elements, and many employing flexbox. In a large enough layout the natural structure is horizontal with each primary element inline. And then what I did was to pop the nav element out with absolute positioning when I needed the vertical layout. Still, the nav-container retained an inline and flex display, adding the control button in for the slideout nav, and it was only the nav element that needed to be moved about. The flex-direction and spacing of the nav-container was constant throughout. This taught me to determine, prior to writing any code, what was the most "natural" layout dictated by the design(s), and adjust from there as required by media type.
 
-## Additional learning headaches
+### Additional learning headaches
 
 - Viewheight (vh) is to be used with caution, especially when considering iOS devices. 
 - Speaking of iOS devices, even if I am busting out my brand new iPhone, with the Chrome app installed, it's still using the blink rendering engine (Apple) so it's going to behave like Safari. Have fun with that! (I do love you Apple but whyyyy)
